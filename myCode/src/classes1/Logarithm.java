@@ -83,6 +83,16 @@ public abstract class Logarithm {
     }
 
     protected void startToTest() {
+        int[] arr = generateRandomArray(maxSize, maxValue);
+        int[] arrH = copyArray(arr);
+
+        printArray(arr);
+        algorithmToTest(arr);
+        printArray(arr);
+
+        comparator(arrH);
+        printArray(arrH);
+
         boolean succeed = true;
         for (int i = 0; i < testTime; i++) {
             int[] arr1 = generateRandomArray(maxSize, maxValue);
@@ -96,15 +106,7 @@ public abstract class Logarithm {
         }
         System.out.println(succeed ? "Nice!" : "Fucking fucked!");
 
-        int[] arr = generateRandomArray(maxSize, maxValue);
-        int[] arrH = copyArray(arr);
-        printArray(arr);
-        algorithmToTest(arr);
-        printArray(arr);
 
-        printArray(arrH);
-        comparator(arrH);
-        printArray(arrH);
     }
 
 }
